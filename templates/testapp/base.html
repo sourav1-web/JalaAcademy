@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/base.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+	<input type="checkbox" id="checkbox">
+	<header class="header">
+		<h2 class="u-name"> <b>MAGNUS</b>
+			<label for="checkbox">
+				<i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
+			</label>
+		</h2>
+		<i class="fa fa-user" aria-hidden="true"></i>
+	</header>
+
+
+	<div class="body">
+		<nav class="side-bar">
+			<div class="user-p">
+				<img src="https://t4.ftcdn.net/jpg/02/27/45/09/360_F_227450952_KQCMShHPOPebUXklULsKsROk5AvN6H1H.jpg">
+				<h4>USER</h4>
+			</div>
+			<ul>
+				<li>
+					<a href="/">
+						<i class="fa fa-home" aria-hidden="true"></i>
+						<span>HOME</span>
+					</a>
+				</li>
+				<li>
+					<a href="/Insert_Employee">
+						<i class="fa fa-user-plus" aria-hidden="true"></i>
+						<span> ADD Employee</span>
+					</a>
+				</li>
+				<li>
+					<a href="/List_Employee">
+						<i class="fa fa-users" aria-hidden="true"></i>
+						<span>LIST Employees</span>
+					</a>
+				</li>
+				
+				
+				<div class="dropdown">
+					<i class="fa fa-bars" aria-hidden="true" style="color: antiquewhite;"></i>
+					
+					<button onclick="myFunction()" class="dropbtn">MORE</button>
+					<i class="fa fa-caret-down" aria-hidden="true" style="color: antiquewhite;"></i>
+					<div id="myDropdown" class="dropdown-content">
+						<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+						<a href="/menu1">Multiple tabs</a>
+						<a href="/menu2">Menu</a>
+						<a href="/menu3">collapsible content</a>
+						<a href="/menu4">links</a>
+						<a href="/menu5">Popup</a>
+						<a href="/menu6">Css Properties</a>
+						<a href="#tools">Tools</a>
+						
+					</div>
+				</div>
+							
+				<li>
+					<a href="#">
+						<i class="fa fa-cog" aria-hidden="true"></i>
+						<span>Setting</span>
+					</a>
+				</li>
+				<li>
+					<a href="/accounts/logout">
+						<i class="fa fa-power-off" aria-hidden="true"></i>
+						<span>Logout</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+	
+		<div class="maincontent">
+			<script>
+				function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+	}
+	
+	function filterFunction() {
+		const input = document.getElementById("myInput");
+		const filter = input.value.toUpperCase();
+		const div = document.getElementById("myDropdown");
+		const a = div.getElementsByTagName("a");
+		for (let i = 0; i < a.length; i++) {
+			txtValue = a[i].textContent || a[i].innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				a[i].style.display = "";
+			} else {
+				a[i].style.display = "none";
+			}
+		}
+	}
+			
+		</script>
+
+			
+
+      {% block content %}{% endblock content %}
+    </div>
+	</div>
+
+
+</body>
+</html>

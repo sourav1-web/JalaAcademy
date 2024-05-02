@@ -1,0 +1,49 @@
+{% extends "testapp/base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Popups</h1>
+    <hr>
+    <ul class="nav nav-tabs" id="myTabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#popup1" role="tab" aria-controls="popup1" aria-selected="true">Popup 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#popup2" role="tab" aria-controls="popup2" aria-selected="false">Popup 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#popup3" role="tab" aria-controls="popup3" aria-selected="false">Popup 3</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabsContent">
+        <div class="tab-pane fade show active" id="popup1" role="tabpanel" aria-labelledby="popup1-tab">
+            <button type="button" class="btn btn-primary" onclick="showAlert('This is Popup 1')">Show Alert</button>
+            <button type="button" class="btn btn-primary" onclick="showConfirm('Confirm Popup 1')">Show Confirm</button>
+            <button type="button" class="btn btn-primary" onclick="showPrompt('Prompt Popup 1')">Show Prompt</button>
+        </div>
+        <div class="tab-pane fade" id="popup2" role="tabpanel" aria-labelledby="popup2-tab">
+            <button type="button" class="btn btn-primary" onclick="showAlert('This is Popup 2')">Show Alert</button>
+            <button type="button" class="btn btn-primary" onclick="showConfirm('Confirm Popup 2')">Show Confirm</button>
+            <button type="button" class="btn btn-primary" onclick="showPrompt('Prompt Popup 2')">Show Prompt</button>
+        </div>
+        <div class="tab-pane fade" id="popup3" role="tabpanel" aria-labelledby="popup3-tab">
+            <button type="button" class="btn btn-primary" onclick="showAlert('This is Popup 3')">Show Alert</button>
+            <button type="button" class="btn btn-primary" onclick="showConfirm('Confirm Popup 3')">Show Confirm</button>
+            <button type="button" class="btn btn-primary" onclick="showPrompt('Prompt Popup 3')">Show Prompt</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showAlert(message) {
+        alert(message);
+    }
+
+    function showConfirm(message) {
+        confirm(message);
+    }
+
+    function showPrompt(message) {
+        prompt(message);
+    }
+</script>
+{% endblock %}

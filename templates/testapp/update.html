@@ -1,0 +1,13 @@
+{% extends "testapp/base.html" %}
+{% block content %}
+<div class="employee-form">
+    <h1>Update Employee Form</h1>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/List_Employee" class="btn btn-danger">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

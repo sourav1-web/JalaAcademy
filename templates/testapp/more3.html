@@ -1,0 +1,103 @@
+{% extends "testapp/base.html" %}
+{% block content %}
+<style>
+  /* Custom CSS for Multiple Tabs with Collapsible Content */
+
+.container {
+    margin-top: 20px;
+}
+
+.nav-tabs {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.nav-tabs .nav-item .nav-link {
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.collapsible {
+    margin-bottom: 15px;
+}
+
+.collapsible-heading {
+    margin-bottom: 0;
+}
+
+.collapsible-heading button {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.collapsible-content {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+</style>
+    <h1>Multiple Tabs with Collapsible Content</h1>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Single Collabs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Multiple Collabs</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabsContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <div class="collapsible">
+                    <h2 class="collapsible-heading">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsibleContent1" aria-expanded="false" aria-controls="collapsibleContent1">
+                            Knows Your Goals
+                        </button>
+                    </h2>
+                    <div id="collapsibleContent1" class="collapse">
+                        <p>This is the collapsible content for Tab 1.</p>
+                    </div>
+                </div>
+                <div class="collapsible">
+                    <h2 class="collapsible-heading">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsibleContent2" aria-expanded="false" aria-controls="collapsibleContent2">
+                            Knows Your Goals 2
+                        </button>
+                    </h2>
+                    <div id="collapsibleContent2" class="collapse">
+                        <p>This is another collapsible content for Tab 1.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <div class="collapsible">
+                    <h2 class="collapsible-heading">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsibleContent3" aria-expanded="false" aria-controls="collapsibleContent3">
+                            Click to Expand/Collapse Content 3
+                        </button>
+                    </h2>
+                    <div id="collapsibleContent3" class="collapse">
+                        <p>This is the collapsible content for Tab 2.</p>
+                    </div>
+                </div>
+                <div class="collapsible">
+                    <h2 class="collapsible-heading">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsibleContent4" aria-expanded="false" aria-controls="collapsibleContent4">
+                            Click to Expand/Collapse Content 4
+                        </button>
+                    </h2>
+                    <div id="collapsibleContent4" class="collapse">
+                        <p>This is another collapsible content for Tab 2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
